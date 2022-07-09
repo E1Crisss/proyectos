@@ -1,17 +1,32 @@
-const $div = document.querySelector("div"),
-  $decrease = document.querySelector("#decrease"),
-  // $reset = document.querySelector('#reset'),
-  $increase = document.querySelector("#increase");
+$decrease = document.querySelector("#decrease"),
+$reset = document.querySelector('#reset'),
+$increase = document.querySelector("#increase");
+const $div = document.querySelector("div");
+
+let num = 0;
+
+  const incrementClick = () => {
+    updateDisplay(++num);
+}
+  const decreaseClick = () => {
+    updateDisplay(--num);
+}
+
+const resetCounter = () => {
+    num = 0;
+    updateDisplay(num);
+  }
+  
+  const $span = document.createElement("span");
+const updateDisplay = () =>{
+
+  $span.innerHTML = num;
+  $div.appendChild($span);
+}
 
   
-  const incre = () =>{
-      let counter = ;
-    }
-    
-    let num = 11;
-const $span = document.createElement("span");
-$span.innerHTML = num;
+  
+$increase.addEventListener("click", incrementClick);
+$decrease.addEventListener("click", decreaseClick);
+$reset.addEventListener('click', resetCounter)
 
-$div.appendChild($span);
-
-$increase.addEventListener("click", incre);
